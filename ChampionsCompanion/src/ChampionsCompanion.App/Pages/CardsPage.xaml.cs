@@ -1,4 +1,5 @@
 using ChampionsCompanion.Core.Model;
+using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -17,8 +18,12 @@ public partial class CardsPage : Page
         // Pages never create DAOs: they use the ones in AppServices.
         var cards = AppServices.Cards.GetAll();
         StatusText.Text = $"{cards.Count} player cards loaded. First one: {cards[0]} ({cards[0].Aspect.Name} {cards[0].Type.Name}).";
-        
+
+
+
         dtgCards.ItemsSource = AppServices.Cards.GetAll();
+        lsvCards.ItemsSource = AppServices.Cards.GetAll();
+
 
         cbAspect.ItemsSource = Aspect.PlayerCodes;
 
@@ -40,7 +45,7 @@ public partial class CardsPage : Page
 
         if (lsvCards.IsLoaded == true)
         {
-            lsvCards.Visibility = Visibility.Hidden;
+            lsvCards.Visibility = Visibility.Collapsed;
             
         }
     }
@@ -49,7 +54,7 @@ public partial class CardsPage : Page
     {
         if (dtgCards.IsLoaded == true)
         {
-            dtgCards.Visibility = Visibility.Hidden;
+            dtgCards.Visibility = Visibility.Collapsed;
         }
 
         if (lsvCards.IsLoaded == true)
