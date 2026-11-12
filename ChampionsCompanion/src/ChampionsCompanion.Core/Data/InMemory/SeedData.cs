@@ -57,7 +57,7 @@ public static class SeedData
                 Traits = "Avenger.",
                 Text = "Spider-Sense — <b>Interrupt</b>: When the villain initiates an attack against you, draw 1 card.",
                 Flavor = "\"Just your friendly neighborhood Spider-Man!\"",
-                IsUnique = true, DeckLimit = 1, Quantity = 1, ImagePath = "Images/Cards/01001a.png",
+                IsUnique = true, DeckLimit = 1, Quantity = 1, ImagePath = "/Images/Cards/01001a.png",
             },
             new Card
             {
@@ -67,7 +67,7 @@ public static class SeedData
                 Traits = "Genius.",
                 Text = "Scientist — <b>Resource</b>: Generate a [mental] resource. (Limit once per round.)",
                 Flavor = "\"Right now, I'd trade the whole Spider-Man bit for a rocking chair and a good book.\"",
-                IsUnique = true, DeckLimit = 1, Quantity = 1, IsHidden = true, ImagePath = "Images/Cards/01001b.png",
+                IsUnique = true, DeckLimit = 1, Quantity = 1, IsHidden = true, ImagePath = "/Images/Cards/01001b.png",
             },
             new Card
             {
@@ -78,7 +78,7 @@ public static class SeedData
                 Traits = "Hero for Hire.",
                 Text = "<b>Forced Response</b>: After you play Black Cat, discard the top 2 cards of your deck. Add each card with a printed [mental] resource discarded this way to your hand.",
                 Flavor = "\"I'm not a hero, I'm a thief.\"",
-                IsUnique = true, DeckLimit = 1, Quantity = 1, ImagePath = "Images/Cards/01002.png",
+                IsUnique = true, DeckLimit = 1, Quantity = 1, ImagePath = "/Images/Cards/01002.png",
             },
             new Card
             {
@@ -88,7 +88,7 @@ public static class SeedData
                 Traits = "Defense. Skill.",
                 Text = "<b>Interrupt</b> <i>(defense)</i>: When you would take any amount of damage from an attack, prevent all of that damage.",
                 Flavor = "\"Have you been training? 'Cause that almost hit me.\" —Spider-Man",
-                DeckLimit = 2, Quantity = 2, ImagePath = "Images/Cards/01003.png",
+                DeckLimit = 2, Quantity = 2, ImagePath = "/Images/Cards/01003.png",
             },
             new Card
             {
@@ -98,7 +98,7 @@ public static class SeedData
                 Traits = "Superpower.",
                 Text = "<b>Hero Interrupt</b>: When a treachery card is revealed from the encounter deck, cancel its \"<b>When Revealed</b>\" effects.",
                 Flavor = "\"My spider-sense is tingling!\" —Spider-Man",
-                DeckLimit = 2, Quantity = 2, ImagePath = "Images/Cards/01004.png",
+                DeckLimit = 2, Quantity = 2, ImagePath = "/Images/Cards/01004.png",
             },
             new Card
             {
@@ -108,7 +108,7 @@ public static class SeedData
                 Traits = "Aerial. Attack. Superpower.",
                 Text = "<b>Hero Action</b> <i>(attack)</i>: Deal 8 damage to an enemy.",
                 Flavor = "\"Tally-ho!\" —Spider-Man",
-                DeckLimit = 3, Quantity = 3, ImagePath = "Images/Cards/01005.png",
+                DeckLimit = 3, Quantity = 3, ImagePath = "/Images/Cards/01005.png",
             },
             new Card
             {
@@ -118,7 +118,7 @@ public static class SeedData
                 Traits = "Persona.",
                 Text = "<b>Alter-Ego Action</b>: Exhaust Aunt May → heal 4 damage from Peter Parker.",
                 Flavor = "\"Goodness, Peter! You've been so clumsy lately.\"",
-                IsUnique = true, DeckLimit = 1, Quantity = 1, ImagePath = "Images/Cards/01006.png",
+                IsUnique = true, DeckLimit = 1, Quantity = 1, ImagePath = "/Images/Cards/01006.png",
             },
             new Card
             {
@@ -127,7 +127,7 @@ public static class SeedData
                 Cost = 1, ResourceEnergy = 1,
                 Traits = "Item. Tech.",
                 Text = "Attach to a minion.\n<b>Forced Interrupt</b>: When attached minion is defeated, remove 3 threat from a scheme.",
-                DeckLimit = 2, Quantity = 2, ImagePath = "Images/Cards/01007.png",
+                DeckLimit = 2, Quantity = 2, ImagePath = "/Images/Cards/01007.png",
             },
             new Card
             {
@@ -136,7 +136,7 @@ public static class SeedData
                 Cost = 1, ResourcePhysical = 1,
                 Traits = "Item. Tech.",
                 Text = "Uses (3 web counters). <i>(Enters play with 3 counters. When those are gone, discard this card)</i>\n<b>Hero Resource</b>: Exhaust Web-Shooter and remove 1 web counter from it → generate a [wild] resource.",
-                DeckLimit = 2, Quantity = 2, ImagePath = "Images/Cards/01008.png",
+                DeckLimit = 2, Quantity = 2, ImagePath = "/Images/Cards/01008.png",
             },
             new Card
             {
@@ -145,7 +145,7 @@ public static class SeedData
                 Cost = 4, ResourcePhysical = 1,
                 Traits = "Condition.",
                 Text = "Hero form only. Attach to an enemy. Max 1 per enemy.\n<b>Forced Interrupt</b>: When attached enemy would attack, discard Webbed Up instead. Then, stun that enemy.",
-                DeckLimit = 2, Quantity = 2, ImagePath = "Images/Cards/01009.png",
+                DeckLimit = 2, Quantity = 2, ImagePath = "/Images/Cards/01009.png",
             },
             new Card
             {
@@ -155,7 +155,7 @@ public static class SeedData
                 Traits = "Avenger. Soldier.",
                 Text = "Rechannel — <b>Action</b>: Spend a [energy] resource and heal 1 damage from Captain Marvel → draw 1 card. (Limit once per round.)",
                 Flavor = "\"I never quit.\"",
-                IsUnique = true, DeckLimit = 1, Quantity = 1, ImagePath = "Images/Cards/01010a.png",
+                IsUnique = true, DeckLimit = 1, Quantity = 1, ImagePath = "/Images/Cards/01010a.png",
             },
             new Card
             {
@@ -165,7 +165,7 @@ public static class SeedData
                 Traits = "S.H.I.E.L.D. Soldier.",
                 Text = "Commander — <b>Action</b>: Choose a player to draw 1 card. (Limit once per round.)",
                 Flavor = "\"It's my job to protect the Earth and everyone on it.\"",
-                IsUnique = true, DeckLimit = 1, Quantity = 1, IsHidden = true, ImagePath = "Images/Cards/01010b.png",
+                IsUnique = true, DeckLimit = 1, Quantity = 1, IsHidden = true, ImagePath = "/Images/Cards/01010b.png",
             },
             new Card
             {
@@ -176,7 +176,7 @@ public static class SeedData
                 Traits = "Avenger. Spy.",
                 Text = "<b>Response</b>: After Spider-Woman enters play, confuse the villain.",
                 Flavor = "\"This is what I wanted: helping the innocents by hospitalizing the guilty.\"",
-                IsUnique = true, DeckLimit = 1, Quantity = 1, ImagePath = "Images/Cards/01011.png",
+                IsUnique = true, DeckLimit = 1, Quantity = 1, ImagePath = "/Images/Cards/01011.png",
             },
             new Card
             {
@@ -186,7 +186,7 @@ public static class SeedData
                 Traits = "Thwart.",
                 Text = "<b>Hero Action</b> <i>(thwart)</i>: Remove 2 threat from a scheme. Then, if you have the [[Aerial]] trait, remove 2 threat from a different scheme.",
                 Flavor = "\"This is one of the more impressive messes I've ever seen.\" —Carol Danvers",
-                DeckLimit = 3, Quantity = 3, ImagePath = "Images/Cards/01012.png",
+                DeckLimit = 3, Quantity = 3, ImagePath = "/Images/Cards/01012.png",
             },
             new Card
             {
@@ -195,7 +195,7 @@ public static class SeedData
                 Cost = 3, ResourcePhysical = 1,
                 Traits = "Attack. Superpower.",
                 Text = "<b>Hero Action</b> <i>(attack)</i>: Deal 5 damage to an enemy. If you paid for this card using a [energy] resource, draw 1 card.",
-                DeckLimit = 3, Quantity = 3, ImagePath = "Images/Cards/01013.png",
+                DeckLimit = 3, Quantity = 3, ImagePath = "/Images/Cards/01013.png",
             },
             new Card
             {
@@ -203,7 +203,7 @@ public static class SeedData
                 TypeId = resource.Id, AspectId = hero.Id, HeroId = captainMarvel.Id, PackId = core.Id, Position = 14,
                 ResourceEnergy = 3,
                 Flavor = "\"That's enough!\" —Carol Danvers",
-                DeckLimit = 2, Quantity = 2, ImagePath = "Images/Cards/01014.png",
+                DeckLimit = 2, Quantity = 2, ImagePath = "/Images/Cards/01014.png",
             },
             new Card
             {
@@ -213,7 +213,7 @@ public static class SeedData
                 Traits = "Location. S.H.I.E.L.D.",
                 Text = "<b>Action</b>: Exhaust Alpha Flight Station, choose and discard 1 card from your hand → draw 1 card (draw 2 cards instead if you are Carol Danvers).",
                 Flavor = "This low-orbit space station can beam cargo and crew to and from the Triskelion",
-                IsUnique = true, DeckLimit = 1, Quantity = 1, ImagePath = "Images/Cards/01015.png",
+                IsUnique = true, DeckLimit = 1, Quantity = 1, ImagePath = "/Images/Cards/01015.png",
             },
             new Card
             {
@@ -223,7 +223,7 @@ public static class SeedData
                 Traits = "Armor. Tech.",
                 Text = "Captain Marvel gets +1 DEF (+2 DEF instead if you have the [[Aerial]] trait).",
                 Flavor = "\"This is so cool!\" —Jessica Drew",
-                IsUnique = true, DeckLimit = 1, Quantity = 1, ImagePath = "Images/Cards/01016.png",
+                IsUnique = true, DeckLimit = 1, Quantity = 1, ImagePath = "/Images/Cards/01016.png",
             },
             new Card
             {
@@ -232,7 +232,7 @@ public static class SeedData
                 Cost = 2, ResourceEnergy = 1,
                 Traits = "Superpower.",
                 Text = "Captain Marvel gains the [[Aerial]] trait.\n<b>Hero Interrupt</b> (<i>defense</i>): When Captain Marvel would take damage, discard Cosmic Flight → prevent 3 of that damage.",
-                DeckLimit = 2, Quantity = 2, ImagePath = "Images/Cards/01017.png",
+                DeckLimit = 2, Quantity = 2, ImagePath = "/Images/Cards/01017.png",
             },
             new Card
             {
@@ -241,7 +241,7 @@ public static class SeedData
                 Cost = 0, ResourceMental = 1,
                 Traits = "Superpower.",
                 Text = "Max 1 per player.\n<b>Action</b>: Spend X [energy] resources → put X energy counters here.\n<b>Hero Action</b> <i>(attack)</i>: Discard Energy Channel → deal 2 damage to an enemy (to a maximum of 10) for each energy counter here.",
-                DeckLimit = 2, Quantity = 2, ImagePath = "Images/Cards/01018.png",
+                DeckLimit = 2, Quantity = 2, ImagePath = "/Images/Cards/01018.png",
             },
             new Card
             {
@@ -251,7 +251,7 @@ public static class SeedData
                 Attack = 3, AttackCost = 1, Health = 5,
                 Traits = "Avenger. Gamma.",
                 Text = "<b>Forced Response</b>: After Hulk attacks, discard the top card of your deck. If that card's printed resource has:\n[physical] - Deal 2 damage to an enemy.\n[energy] - Deal 1 damage to each character.\n[mental] - Discard Hulk.\n[wild] - All of the above.",
-                IsUnique = true, DeckLimit = 1, Quantity = 1, ImagePath = "Images/Cards/01050.png",
+                IsUnique = true, DeckLimit = 1, Quantity = 1, ImagePath = "/Images/Cards/01050.png",
             },
             new Card
             {
@@ -262,7 +262,7 @@ public static class SeedData
                 Traits = "Avenger.",
                 Text = "<b>Response</b>: After Tigra attacks and defeats a minion, heal 1 damage from her.",
                 Flavor = "\"Sorry —no autographs.\"",
-                IsUnique = true, DeckLimit = 1, Quantity = 1, ImagePath = "Images/Cards/01051.png",
+                IsUnique = true, DeckLimit = 1, Quantity = 1, ImagePath = "/Images/Cards/01051.png",
             },
             new Card
             {
@@ -272,7 +272,7 @@ public static class SeedData
                 Traits = "Thwart.",
                 Text = "<b>Response</b> <i>(thwart)</i>: After your hero attacks and defeats an enemy, remove 2 threat from a scheme.",
                 Flavor = "\"Kamala, we don't have a theme song. Please stop humming one...\" —Captain Marvel",
-                DeckLimit = 3, Quantity = 3, ImagePath = "Images/Cards/01052.png",
+                DeckLimit = 3, Quantity = 3, ImagePath = "/Images/Cards/01052.png",
             },
             new Card
             {
@@ -281,7 +281,7 @@ public static class SeedData
                 Cost = 2, ResourceEnergy = 1,
                 Traits = "Attack.",
                 Text = "<b>Hero Action</b> <i>(attack)</i>: Deal 5 damage to a minion. If you paid for this card using a [physical] resource, this attack gains overkill. <i>(Excess damage from this attack is dealt to the villain.)</i>",
-                DeckLimit = 3, Quantity = 3, ImagePath = "Images/Cards/01053.png",
+                DeckLimit = 3, Quantity = 3, ImagePath = "/Images/Cards/01053.png",
             },
             new Card
             {
@@ -291,7 +291,7 @@ public static class SeedData
                 Traits = "Attack.",
                 Text = "<b>Hero Action</b> <i>(attack)</i>: Deal 5 damage to an enemy.",
                 Flavor = "SMACK!",
-                DeckLimit = 3, Quantity = 3, ImagePath = "Images/Cards/01054.png",
+                DeckLimit = 3, Quantity = 3, ImagePath = "/Images/Cards/01054.png",
             },
             new Card
             {
@@ -299,7 +299,7 @@ public static class SeedData
                 TypeId = resource.Id, AspectId = aggression.Id, PackId = core.Id, Position = 55,
                 ResourceWild = 1,
                 Text = "Max 2 per deck.\nDouble the number of resources this card generates while paying for a Aggression <i>(red)</i> card.",
-                DeckLimit = 2, Quantity = 2, ImagePath = "Images/Cards/01055.png",
+                DeckLimit = 2, Quantity = 2, ImagePath = "/Images/Cards/01055.png",
             },
             new Card
             {
@@ -309,7 +309,7 @@ public static class SeedData
                 Traits = "Skill.",
                 Text = "Play under any player's control. Max 1 per player.\nYour hero gets +1 ATK.",
                 Flavor = "\"Tony! She did it again!\" —Janet Van Dyne",
-                DeckLimit = 3, Quantity = 3, ImagePath = "Images/Cards/01057.png",
+                DeckLimit = 3, Quantity = 3, ImagePath = "/Images/Cards/01057.png",
             },
             new Card
             {
@@ -320,7 +320,7 @@ public static class SeedData
                 Traits = "Defender.",
                 Text = "<b>Response</b>: After Daredevil thwarts, deal 1 damage to an enemy.",
                 Flavor = "\"Sometimes, I think I accomplish more with my fists than with my law firm.\"",
-                IsUnique = true, DeckLimit = 1, Quantity = 1, ImagePath = "Images/Cards/01058.png",
+                IsUnique = true, DeckLimit = 1, Quantity = 1, ImagePath = "/Images/Cards/01058.png",
             },
             new Card
             {
@@ -331,7 +331,7 @@ public static class SeedData
                 Traits = "Defender.",
                 Text = "Jessica Jones gets +1 THW for each side scheme in play.",
                 Flavor = "\"I am very good at finding people.\"",
-                IsUnique = true, DeckLimit = 1, Quantity = 1, ImagePath = "Images/Cards/01059.png",
+                IsUnique = true, DeckLimit = 1, Quantity = 1, ImagePath = "/Images/Cards/01059.png",
             },
             new Card
             {
@@ -341,7 +341,7 @@ public static class SeedData
                 Traits = "Thwart.",
                 Text = "<b>Hero Action</b> <i>(thwart)</i>: Remove 3 threat from a scheme (4 threat instead if you paid for this card using a [mental] resource).",
                 Flavor = "\"You lose. And you're going to answer for what you've done.\" —Captain America",
-                DeckLimit = 3, Quantity = 3, ImagePath = "Images/Cards/01060.png",
+                DeckLimit = 3, Quantity = 3, ImagePath = "/Images/Cards/01060.png",
             },
             new Card
             {
@@ -349,7 +349,7 @@ public static class SeedData
                 TypeId = evt.Id, AspectId = justice.Id, PackId = core.Id, Position = 61,
                 Cost = 0, ResourceMental = 1,
                 Text = "<b>Hero Interrupt</b>: When any amount of threat would be placed on a scheme, you take it as damage instead.",
-                DeckLimit = 3, Quantity = 3, ImagePath = "Images/Cards/01061.png",
+                DeckLimit = 3, Quantity = 3, ImagePath = "/Images/Cards/01061.png",
             },
             new Card
             {
@@ -357,7 +357,7 @@ public static class SeedData
                 TypeId = resource.Id, AspectId = justice.Id, PackId = core.Id, Position = 62,
                 ResourceWild = 1,
                 Text = "Max 2 per deck.\nDouble the number of resources this card generates while paying for a Justice <i>(yellow)</i> card.",
-                DeckLimit = 2, Quantity = 2, ImagePath = "Images/Cards/01062.png",
+                DeckLimit = 2, Quantity = 2, ImagePath = "/Images/Cards/01062.png",
             },
             new Card
             {
@@ -367,7 +367,7 @@ public static class SeedData
                 Traits = "Location.",
                 Text = "Max 1 per player.\n<b>Response</b>: After you defeat a minion, exhaust Interrogation Room → remove 1 threat from a scheme.",
                 Flavor = "\"Oh, she's sorry! Let me get the keys and call you a car service!\" —Misty Knight",
-                DeckLimit = 3, Quantity = 3, ImagePath = "Images/Cards/01063.png",
+                DeckLimit = 3, Quantity = 3, ImagePath = "/Images/Cards/01063.png",
             },
             new Card
             {
@@ -376,7 +376,7 @@ public static class SeedData
                 Cost = 2, ResourceEnergy = 1,
                 Traits = "Skill.",
                 Text = "Play under any player's control. Max 1 per player.\nYour hero gets +1 THW.",
-                DeckLimit = 3, Quantity = 3, ImagePath = "Images/Cards/01065.png",
+                DeckLimit = 3, Quantity = 3, ImagePath = "/Images/Cards/01065.png",
             },
             new Card
             {
@@ -386,7 +386,7 @@ public static class SeedData
                 Attack = 1, AttackCost = 1, Thwart = 1, ThwartCost = 1, Health = 3,
                 Traits = "Avenger.",
                 Text = "Hawkeye enters play with 4 arrow counters on him.\n<b>Response</b>: After a minion enters play, remove 1 arrow counter from Hawkeye → deal 2 damage to that minion.",
-                IsUnique = true, DeckLimit = 1, Quantity = 1, ImagePath = "Images/Cards/01066.png",
+                IsUnique = true, DeckLimit = 1, Quantity = 1, ImagePath = "/Images/Cards/01066.png",
             },
             new Card
             {
@@ -397,7 +397,7 @@ public static class SeedData
                 Traits = "S.H.I.E.L.D.",
                 Text = "<b>Response</b>: After Maria Hill enters play, each player draws 1 card.",
                 Flavor = "\"Believe it or not, we all want the same thing.\"",
-                IsUnique = true, DeckLimit = 1, Quantity = 1, ImagePath = "Images/Cards/01067.png",
+                IsUnique = true, DeckLimit = 1, Quantity = 1, ImagePath = "/Images/Cards/01067.png",
             },
             new Card
             {
@@ -408,7 +408,7 @@ public static class SeedData
                 Traits = "Android. Avenger.",
                 Text = "<b>Action</b>: Spend a [energy] resource → choose THW or ATK. Until the end of the phase, Vision gets +2 to the chosen power. (Limit once per round.)",
                 Flavor = "\"I will handle this\"",
-                IsUnique = true, DeckLimit = 1, Quantity = 1, ImagePath = "Images/Cards/01068.png",
+                IsUnique = true, DeckLimit = 1, Quantity = 1, ImagePath = "/Images/Cards/01068.png",
             },
             new Card
             {
@@ -417,7 +417,7 @@ public static class SeedData
                 Cost = 0, ResourcePhysical = 1,
                 Text = "<b>Action</b>: Ready an ally.",
                 Flavor = "\"We train hard every day so that when the time comes, we'll be ready.\" —Steve Rogers",
-                DeckLimit = 3, Quantity = 3, ImagePath = "Images/Cards/01069.png",
+                DeckLimit = 3, Quantity = 3, ImagePath = "/Images/Cards/01069.png",
             },
             new Card
             {
@@ -427,7 +427,7 @@ public static class SeedData
                 Traits = "Tactic.",
                 Text = "<b>Hero Action</b>: Choose a player. Each character that player controls gets +1 THW and +1 ATK until the end of the phase.",
                 Flavor = "\"Let's go everyone!\" —Carol Danvers",
-                DeckLimit = 3, Quantity = 3, ImagePath = "Images/Cards/01070.png",
+                DeckLimit = 3, Quantity = 3, ImagePath = "/Images/Cards/01070.png",
             },
             new Card
             {
@@ -436,7 +436,7 @@ public static class SeedData
                 Cost = 0, ResourceMental = 1,
                 Text = "<b>Action</b>: Pay the printed cost of an ally in any player's discard pile → put that ally into play under your control.",
                 Flavor = "\"This is a code red! All hands on deck!\" —Maria Hill",
-                DeckLimit = 3, Quantity = 3, ImagePath = "Images/Cards/01071.png",
+                DeckLimit = 3, Quantity = 3, ImagePath = "/Images/Cards/01071.png",
             },
             new Card
             {
@@ -444,7 +444,7 @@ public static class SeedData
                 TypeId = resource.Id, AspectId = leadership.Id, PackId = core.Id, Position = 72,
                 ResourceWild = 1,
                 Text = "Max 2 per deck.\nDouble the number of resources this card generates while paying for a Leadership <i>(blue)</i> card.",
-                DeckLimit = 2, Quantity = 2, ImagePath = "Images/Cards/01072.png",
+                DeckLimit = 2, Quantity = 2, ImagePath = "/Images/Cards/01072.png",
             },
             new Card
             {
@@ -454,7 +454,7 @@ public static class SeedData
                 Traits = "Condition.",
                 Text = "Attach to an ally. Max 1 per ally.\nAttached ally gets +1 THW and +1 ATK.",
                 Flavor = "\"I'm glad she's on our side.\" —Star-Lord",
-                DeckLimit = 3, Quantity = 3, ImagePath = "Images/Cards/01074.png",
+                DeckLimit = 3, Quantity = 3, ImagePath = "/Images/Cards/01074.png",
             },
             new Card
             {
@@ -464,7 +464,7 @@ public static class SeedData
                 Attack = 1, AttackCost = 1, Thwart = 2, ThwartCost = 1, Health = 2,
                 Traits = "S.H.I.E.L.D. Spy.",
                 Text = "<b>Interrupt</b>: When a card is revealed from the encounter deck, exhaust Black Widow and spend a [mental] resource → cancel the effects of that card and discard it. Then, reveal another card from the encounter deck.",
-                IsUnique = true, DeckLimit = 1, Quantity = 1, ImagePath = "Images/Cards/01075.png",
+                IsUnique = true, DeckLimit = 1, Quantity = 1, ImagePath = "/Images/Cards/01075.png",
             },
             new Card
             {
@@ -475,7 +475,7 @@ public static class SeedData
                 Traits = "Defender.",
                 Text = "Toughness. <i>(This character enters play with a tough status card.)</i>",
                 Flavor = "\"Power Man for hire—Cage speakin'.\"",
-                IsUnique = true, DeckLimit = 1, Quantity = 1, ImagePath = "Images/Cards/01076.png",
+                IsUnique = true, DeckLimit = 1, Quantity = 1, ImagePath = "/Images/Cards/01076.png",
             },
             new Card
             {
@@ -485,7 +485,7 @@ public static class SeedData
                 Traits = "Attack.",
                 Text = "<b>Response</b> <i>(attack)</i>: After your hero defends against an enemy attack, deal damage to that enemy equal to your hero's ATK.",
                 Flavor = "\"That's what you get!\" —Iron Fist",
-                DeckLimit = 3, Quantity = 3, ImagePath = "Images/Cards/01077.png",
+                DeckLimit = 3, Quantity = 3, ImagePath = "/Images/Cards/01077.png",
             },
             new Card
             {
@@ -494,7 +494,7 @@ public static class SeedData
                 Cost = 1, ResourceMental = 1,
                 Text = "<b>Hero Interrupt</b>: When a treachery card is revealed from the encounter deck, cancel its \"<b>When Revealed</b>\" effects. The villain attacks you instead.",
                 Flavor = "\"Ahem! Stand aside, citizens!\" —Ms. Marvel",
-                DeckLimit = 3, Quantity = 3, ImagePath = "Images/Cards/01078.png",
+                DeckLimit = 3, Quantity = 3, ImagePath = "/Images/Cards/01078.png",
             },
             new Card
             {
@@ -502,7 +502,7 @@ public static class SeedData
                 TypeId = resource.Id, AspectId = protection.Id, PackId = core.Id, Position = 79,
                 ResourceWild = 1,
                 Text = "Max 2 per deck.\nDouble the number of resources this card generates while paying for a Protection <i>(green)</i> card.",
-                DeckLimit = 2, Quantity = 2, ImagePath = "Images/Cards/01079.png",
+                DeckLimit = 2, Quantity = 2, ImagePath = "/Images/Cards/01079.png",
             },
             new Card
             {
@@ -512,7 +512,7 @@ public static class SeedData
                 Traits = "Armor.",
                 Text = "Play under any player's control. Max 1 per player.\nYour hero gets +1 DEF.",
                 Flavor = "Life-saving and stylish.",
-                DeckLimit = 3, Quantity = 3, ImagePath = "Images/Cards/01081.png",
+                DeckLimit = 3, Quantity = 3, ImagePath = "/Images/Cards/01081.png",
             },
             new Card
             {
@@ -522,7 +522,7 @@ public static class SeedData
                 Traits = "Condition.",
                 Text = "<b>Response</b>: After your hero defends, discard indomitable → ready your hero.",
                 Flavor = "\"We have no choice. So we fight — and we win. There are no other options.\" —Captain America",
-                DeckLimit = 3, Quantity = 3, ImagePath = "Images/Cards/01082.png",
+                DeckLimit = 3, Quantity = 3, ImagePath = "/Images/Cards/01082.png",
             },
             new Card
             {
@@ -532,7 +532,7 @@ public static class SeedData
                 Attack = 1, AttackCost = 1, Thwart = 1, ThwartCost = 1, Health = 3,
                 Traits = "S.H.I.E.L.D. Spy.",
                 Text = "<b>Response</b>: After Mockingbird enters play, stun an enemy.",
-                IsUnique = true, DeckLimit = 1, Quantity = 1, ImagePath = "Images/Cards/01083.png",
+                IsUnique = true, DeckLimit = 1, Quantity = 1, ImagePath = "/Images/Cards/01083.png",
             },
             new Card
             {
@@ -542,7 +542,7 @@ public static class SeedData
                 Attack = 2, AttackCost = 1, Thwart = 2, ThwartCost = 1, Health = 3,
                 Traits = "S.H.I.E.L.D. Spy.",
                 Text = "<b>Forced Response</b>: After Nick Fury enters play, choose one: remove 2 threat from a scheme, draw 3 cards, or deal 4 damage to an enemy. At the end of the round, if Nick Fury is still in play, discard him.",
-                IsUnique = true, DeckLimit = 1, Quantity = 1, ImagePath = "Images/Cards/01084.png",
+                IsUnique = true, DeckLimit = 1, Quantity = 1, ImagePath = "/Images/Cards/01084.png",
             },
             new Card
             {
@@ -552,7 +552,7 @@ public static class SeedData
                 Traits = "Thwart.",
                 Text = "<b>Interrupt</b> <i>(thwart)</i>: When the villain schemes, reduce the amount of threat placed on the scheme by 1.",
                 Flavor = "\"CALLING ALL UNITS! CALLING ALL UNITS!\"",
-                DeckLimit = 3, Quantity = 3, ImagePath = "Images/Cards/01085.png",
+                DeckLimit = 3, Quantity = 3, ImagePath = "/Images/Cards/01085.png",
             },
             new Card
             {
@@ -561,7 +561,7 @@ public static class SeedData
                 Cost = 1, ResourceMental = 1,
                 Text = "<b>Action</b>: Heal 2 damage from any character.",
                 Flavor = "\"Does it still qualify as first aid if it's your second day in the hospital?\" —Clint Barton",
-                DeckLimit = 3, Quantity = 3, ImagePath = "Images/Cards/01086.png",
+                DeckLimit = 3, Quantity = 3, ImagePath = "/Images/Cards/01086.png",
             },
             new Card
             {
@@ -571,7 +571,7 @@ public static class SeedData
                 Traits = "Attack.",
                 Text = "<b>Hero Action</b> <i>(attack)</i>: Deal 3 damage to an enemy.",
                 Flavor = "WHAM!",
-                DeckLimit = 3, Quantity = 3, ImagePath = "Images/Cards/01087.png",
+                DeckLimit = 3, Quantity = 3, ImagePath = "/Images/Cards/01087.png",
             },
             new Card
             {
@@ -579,7 +579,7 @@ public static class SeedData
                 TypeId = resource.Id, AspectId = basic.Id, PackId = core.Id, Position = 88,
                 ResourceEnergy = 2,
                 Text = "Max 1 per deck.",
-                DeckLimit = 1, Quantity = 4, ImagePath = "Images/Cards/01088.png",
+                DeckLimit = 1, Quantity = 4, ImagePath = "/Images/Cards/01088.png",
             },
             new Card
             {
@@ -587,7 +587,7 @@ public static class SeedData
                 TypeId = resource.Id, AspectId = basic.Id, PackId = core.Id, Position = 89,
                 ResourceMental = 2,
                 Text = "Max 1 per deck.",
-                DeckLimit = 1, Quantity = 4, ImagePath = "Images/Cards/01089.png",
+                DeckLimit = 1, Quantity = 4, ImagePath = "/Images/Cards/01089.png",
             },
             new Card
             {
@@ -595,7 +595,7 @@ public static class SeedData
                 TypeId = resource.Id, AspectId = basic.Id, PackId = core.Id, Position = 90,
                 ResourcePhysical = 2,
                 Text = "Max 1 per deck.",
-                DeckLimit = 1, Quantity = 4, ImagePath = "Images/Cards/01090.png",
+                DeckLimit = 1, Quantity = 4, ImagePath = "/Images/Cards/01090.png",
             },
             new Card
             {
@@ -605,7 +605,7 @@ public static class SeedData
                 Traits = "Avenger. Location.",
                 Text = "Max 1 per player.\n<b>Action</b>: Exhaust Avengers Mansion → choose a player. That player draws 1 card.",
                 Flavor = "\"Did you remember to turn off the stove?\" —Janet Van Dyne",
-                DeckLimit = 3, Quantity = 4, ImagePath = "Images/Cards/01091.png",
+                DeckLimit = 3, Quantity = 4, ImagePath = "/Images/Cards/01091.png",
             },
             new Card
             {
@@ -615,7 +615,7 @@ public static class SeedData
                 Traits = "Location. S.H.I.E.L.D.",
                 Text = "Max 1 per player.\n<b>Action</b>: Exhaust Helicarrier → choose a player. Reduce the resource cost of the next card that player plays this phase by 1.",
                 Flavor = "\"A flying aircraft carrier? You're kidding, right?\" —Jennifer Walters",
-                DeckLimit = 3, Quantity = 4, ImagePath = "Images/Cards/01092.png",
+                DeckLimit = 3, Quantity = 4, ImagePath = "/Images/Cards/01092.png",
             },
             new Card
             {
@@ -624,7 +624,7 @@ public static class SeedData
                 Cost = 2, ResourceEnergy = 1,
                 Traits = "Condition.",
                 Text = "<b>Hero Action</b>: Spend a [physical] resource and discard this card → ready your hero.",
-                DeckLimit = 3, Quantity = 3, ImagePath = "Images/Cards/01093.png",
+                DeckLimit = 3, Quantity = 3, ImagePath = "/Images/Cards/01093.png",
             },
         ]);
 

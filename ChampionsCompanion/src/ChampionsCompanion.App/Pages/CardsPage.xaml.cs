@@ -25,7 +25,9 @@ public partial class CardsPage : Page
         lsvCards.ItemsSource = AppServices.Cards.GetAll();
 
 
-        cbAspect.ItemsSource = Aspect.PlayerCodes;
+        
+
+        cbAspect.ItemsSource = AppServices.Aspects.GetAll();
 
         cbType.ItemsSource = CardType.PlayerCodes;
 

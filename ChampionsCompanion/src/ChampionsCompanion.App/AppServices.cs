@@ -1,5 +1,6 @@
 using ChampionsCompanion.Core.Data;
 using ChampionsCompanion.Core.Data.InMemory;
+using ChampionsCompanion.Core.Model;
 
 namespace ChampionsCompanion.App;
 
@@ -16,6 +17,8 @@ public static class AppServices
     public static ICardDao Cards { get; private set; } = null!;
     public static IDeckDao Decks { get; private set; } = null!;
     public static ILookupDao Lookups { get; private set; } = null!;
+    
+    public static IAspectDao Aspects { get; private set; }
 
     public static void UseInMemoryData()
     {
@@ -23,5 +26,6 @@ public static class AppServices
         Cards = new InMemoryCardDao(store);
         Decks = new InMemoryDeckDao(store);
         Lookups = new InMemoryLookupDao(store);
+        Aspects = new InMemoryAspectDao(store);
     }
 }

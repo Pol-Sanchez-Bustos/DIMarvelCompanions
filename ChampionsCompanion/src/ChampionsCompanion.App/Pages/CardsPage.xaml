@@ -186,6 +186,8 @@
 
                         <Image Source="{Binding ImagePath}" Width="300" Height="400" Visibility="Visible"></Image>
                         
+
+                        
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="auto"></RowDefinition>

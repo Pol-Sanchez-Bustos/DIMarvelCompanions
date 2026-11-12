@@ -14,11 +14,137 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\Cards\01001a.png" />
+    <None Remove="Images\Cards\01001b.png" />
+    <None Remove="Images\Cards\01002.png" />
+    <None Remove="Images\Cards\01003.png" />
+    <None Remove="Images\Cards\01004.png" />
+    <None Remove="Images\Cards\01005.png" />
+    <None Remove="Images\Cards\01006.png" />
+    <None Remove="Images\Cards\01007.png" />
+    <None Remove="Images\Cards\01008.png" />
+    <None Remove="Images\Cards\01009.png" />
+    <None Remove="Images\Cards\01010a.png" />
+    <None Remove="Images\Cards\01010b.png" />
+    <None Remove="Images\Cards\01011.png" />
+    <None Remove="Images\Cards\01012.png" />
+    <None Remove="Images\Cards\01013.png" />
+    <None Remove="Images\Cards\01014.png" />
+    <None Remove="Images\Cards\01015.png" />
+    <None Remove="Images\Cards\01016.png" />
+    <None Remove="Images\Cards\01017.png" />
+    <None Remove="Images\Cards\01018.png" />
+    <None Remove="Images\Cards\01050.png" />
+    <None Remove="Images\Cards\01051.png" />
+    <None Remove="Images\Cards\01052.png" />
+    <None Remove="Images\Cards\01053.png" />
+    <None Remove="Images\Cards\01054.png" />
+    <None Remove="Images\Cards\01055.png" />
+    <None Remove="Images\Cards\01057.png" />
+    <None Remove="Images\Cards\01058.png" />
+    <None Remove="Images\Cards\01059.png" />
+    <None Remove="Images\Cards\01060.png" />
+    <None Remove="Images\Cards\01061.png" />
+    <None Remove="Images\Cards\01062.png" />
+    <None Remove="Images\Cards\01063.png" />
+    <None Remove="Images\Cards\01065.png" />
+    <None Remove="Images\Cards\01066.png" />
+    <None Remove="Images\Cards\01067.png" />
+    <None Remove="Images\Cards\01068.png" />
+    <None Remove="Images\Cards\01069.png" />
+    <None Remove="Images\Cards\01070.png" />
+    <None Remove="Images\Cards\01071.png" />
+    <None Remove="Images\Cards\01072.png" />
+    <None Remove="Images\Cards\01074.png" />
+    <None Remove="Images\Cards\01075.png" />
+    <None Remove="Images\Cards\01076.png" />
+    <None Remove="Images\Cards\01077.png" />
+    <None Remove="Images\Cards\01078.png" />
+    <None Remove="Images\Cards\01079.png" />
+    <None Remove="Images\Cards\01081.png" />
+    <None Remove="Images\Cards\01082.png" />
+    <None Remove="Images\Cards\01083.png" />
+    <None Remove="Images\Cards\01084.png" />
+    <None Remove="Images\Cards\01085.png" />
+    <None Remove="Images\Cards\01086.png" />
+    <None Remove="Images\Cards\01087.png" />
+    <None Remove="Images\Cards\01088.png" />
+    <None Remove="Images\Cards\01089.png" />
+    <None Remove="Images\Cards\01090.png" />
+    <None Remove="Images\Cards\01091.png" />
+    <None Remove="Images\Cards\01092.png" />
+    <None Remove="Images\Cards\01093.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="WPF-UI" Version="4.3.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\ChampionsCompanion.Core\ChampionsCompanion.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\Cards\01001a.png" />
+    <Resource Include="Images\Cards\01001b.png" />
+    <Resource Include="Images\Cards\01002.png" />
+    <Resource Include="Images\Cards\01003.png" />
+    <Resource Include="Images\Cards\01004.png" />
+    <Resource Include="Images\Cards\01005.png" />
+    <Resource Include="Images\Cards\01006.png" />
+    <Resource Include="Images\Cards\01007.png" />
+    <Resource Include="Images\Cards\01008.png" />
+    <Resource Include="Images\Cards\01009.png" />
+    <Resource Include="Images\Cards\01010a.png" />
+    <Resource Include="Images\Cards\01010b.png" />
+    <Resource Include="Images\Cards\01011.png" />
+    <Resource Include="Images\Cards\01012.png" />
+    <Resource Include="Images\Cards\01013.png" />
+    <Resource Include="Images\Cards\01014.png" />
+    <Resource Include="Images\Cards\01015.png" />
+    <Resource Include="Images\Cards\01016.png" />
+    <Resource Include="Images\Cards\01017.png" />
+    <Resource Include="Images\Cards\01018.png" />
+    <Resource Include="Images\Cards\01050.png" />
+    <Resource Include="Images\Cards\01051.png" />
+    <Resource Include="Images\Cards\01052.png" />
+    <Resource Include="Images\Cards\01053.png" />
+    <Resource Include="Images\Cards\01054.png" />
+    <Resource Include="Images\Cards\01055.png" />
+    <Resource Include="Images\Cards\01057.png" />
+    <Resource Include="Images\Cards\01058.png" />
+    <Resource Include="Images\Cards\01059.png" />
+    <Resource Include="Images\Cards\01060.png" />
+    <Resource Include="Images\Cards\01061.png" />
+    <Resource Include="Images\Cards\01062.png" />
+    <Resource Include="Images\Cards\01063.png" />
+    <Resource Include="Images\Cards\01065.png" />
+    <Resource Include="Images\Cards\01066.png" />
+    <Resource Include="Images\Cards\01067.png" />
+    <Resource Include="Images\Cards\01068.png" />
+    <Resource Include="Images\Cards\01069.png" />
+    <Resource Include="Images\Cards\01070.png" />
+    <Resource Include="Images\Cards\01071.png" />
+    <Resource Include="Images\Cards\01072.png" />
+    <Resource Include="Images\Cards\01074.png" />
+    <Resource Include="Images\Cards\01075.png" />
+    <Resource Include="Images\Cards\01076.png" />
+    <Resource Include="Images\Cards\01077.png" />
+    <Resource Include="Images\Cards\01078.png" />
+    <Resource Include="Images\Cards\01079.png" />
+    <Resource Include="Images\Cards\01081.png" />
+    <Resource Include="Images\Cards\01082.png" />
+    <Resource Include="Images\Cards\01083.png" />
+    <Resource Include="Images\Cards\01084.png" />
+    <Resource Include="Images\Cards\01085.png" />
+    <Resource Include="Images\Cards\01086.png" />
+    <Resource Include="Images\Cards\01087.png" />
+    <Resource Include="Images\Cards\01088.png" />
+    <Resource Include="Images\Cards\01089.png" />
+    <Resource Include="Images\Cards\01090.png" />
+    <Resource Include="Images\Cards\01091.png" />
+    <Resource Include="Images\Cards\01092.png" />
+    <Resource Include="Images\Cards\01093.png" />
   </ItemGroup>
 
   <ItemGroup>

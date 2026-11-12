@@ -1,5 +1,10 @@
 namespace ChampionsCompanion.Core.Model;
 
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+
+
+
 /// <summary>
 /// A card. In the database this is the <c>card</c> table (it has many more columns,
 /// most of them for encounter cards; the app only uses these).
@@ -89,6 +94,15 @@ public class Card
     /// <summary>Relative path ("Images/Cards/01058.png") or absolute URL of the card image (DB column <c>image_url</c>).</summary>
     public string? ImagePath { get; set; }
 
+    public ImageSource ImagePathBitmap
+    {
+        get
+        {
+            return new BitmapImage(
+                new Uri("Images/Cards/01058.png", UriKind.Relative)
+            );
+        }
+    }
     public DateTime DateCreation { get; set; }
     public DateTime DateUpdate { get; set; }
 
