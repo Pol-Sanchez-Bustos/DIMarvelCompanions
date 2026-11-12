@@ -15,7 +15,7 @@ namespace ChampionsCompanion.Core.Data.InMemory
 
         public InMemoryAspectDao(InMemoryDataStore store) => _store = store;
 
-        public IReadOnlyList<Aspect> GetAll()
+        public List<Aspect> GetAll()
         {
             return _store.Aspects.ToList();
         }

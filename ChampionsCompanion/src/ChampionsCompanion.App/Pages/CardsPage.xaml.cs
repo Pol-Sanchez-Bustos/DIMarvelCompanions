@@ -27,11 +27,64 @@ public partial class CardsPage : Page
 
         
 
-        cbAspect.ItemsSource = AppServices.Aspects.GetAll();
+        List<Aspect> aspects = AppServices.Aspects.GetAll();
 
-        cbType.ItemsSource = CardType.PlayerCodes;
+        Aspect asp = new Aspect();
+        asp.Name = "All";
+        asp.Id = -1;
+        aspects.Add( asp );
 
-        
+        cbAspect.ItemsSource = aspects;
+        cbAspect.SelectedItem = asp;
+
+
+       
+        List<CardType> types = AppServices.CardTypes.getAll();
+
+        CardType typ = new CardType();
+        typ.Name = "All";
+        typ.Id = -1;
+
+        types.Add(typ);
+        cbType.ItemsSource = types;
+        cbType.SelectedItem = typ;
+
+
+        List<Hero> heros = AppServices.Heros.getAll();
+
+        Hero hero = new Hero();
+        hero.Name = "All";
+        hero.Id = -1;
+
+        heros.Add(hero);
+        cbHero.ItemsSource = heros;
+        cbHero.SelectedItem = hero;
+        cbHero.IsEnabled = false;
+
+
+        List<Pack> packs = AppServices.Packs.getAll();
+
+        Pack pack = new Pack();
+        pack.Name = "All";
+        pack.Id = -1;
+
+        packs.Add(pack);
+        cbPack.ItemsSource = packs;
+        cbPack.SelectedItem = pack;
+
+        List<String> costos = new List<String>();
+        costos.Add("---");
+
+        for (int i = 0; i<10; i++)
+        {
+            costos.Add(""+i);
+        }
+
+        cbCost.ItemsSource = costos;
+        cbCost.SelectedItem = "---";
+
+
+
         btLsv.IsEnabled = true;
         btDtg.IsEnabled = false;
     }
@@ -66,5 +119,38 @@ public partial class CardsPage : Page
             btDtg.IsEnabled = true;
         }
         
+    }
+
+    private void cbSelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+        if (cbAspect.IsLoaded && cbAspect.HasItems)
+        {
+            if((cbAspect.SelectedItem as Aspect).Id == -1 || (cbAspect.SelectedItem as Aspect).Id == 1)
+            {
+                cbHero.IsEnabled = true;
+            }
+            else
+            {
+                cbHero.IsEnabled=false;
+            }
+        }
+    }
+
+    
+    
+
+    private void btNewCard_Click(object sender, RoutedEventArgs e)
+    {
+        int codi = -1;
+        if(dtgCards.IsLoaded == true && dtgCards.HasItems)
+        {
+            if(dtgCards.SelectedItem != null)codi = (dtgCards.SelectedItem as Card).Id;
+        }
+        NavigationService.Navigate(new NewCard(codi));
+    }
+
+    private void txtName_TextChanged(object sender, TextChangedEventArgs e)
+    {
+
     }
 }

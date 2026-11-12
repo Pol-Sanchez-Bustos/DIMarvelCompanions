@@ -30,7 +30,7 @@
             <TextBlock Grid.Column="0" Text="Cards" FontSize="28" FontWeight="SemiBold" Foreground="White"/>
             <Button Grid.Column="1" Style="{StaticResource btCards}" HorizontalAlignment="Right" x:Name="btDtg" Click="btDtg_Click">Grid</Button>
             <Button Grid.Column="2" Style="{StaticResource btCards}" HorizontalAlignment="Right" x:Name="btLsv" Click="btLsv_Click">Cards</Button>
-            <Button Grid.Column="3" Style="{StaticResource btCards}" HorizontalAlignment="Right" Padding="10,10,20,10" Background="{StaticResource AccentBrush}" Foreground="Black">+ New Card</Button>
+            <Button Grid.Column="3" Style="{StaticResource btCards}" HorizontalAlignment="Right" Padding="10,10,20,10" Background="{StaticResource AccentBrush}" Foreground="Black" x:Name="btNewCard" Click="btNewCard_Click">+ New Card</Button>
         </Grid>
 
         <Grid>
@@ -54,12 +54,12 @@
             <Label Grid.Column="4" Grid.Row="0">Pack</Label>
             <Label Grid.Column="5" Grid.Row="0">Hero</Label>
 
-            <TextBox x:Name="txtName" Grid.Column="0" Grid.Row="1" Margin="0,0,5,0"></TextBox>
-            <ComboBox x:Name="cbAspect" Grid.Column="1" Grid.Row="1" Style="{StaticResource cbFiltres}"></ComboBox>
-            <ComboBox x:Name="cbType" Grid.Column="2" Grid.Row="1" Style="{StaticResource cbFiltres}"></ComboBox>
-            <ComboBox x:Name="cbCost" Grid.Column="3" Grid.Row="1" Style="{StaticResource cbFiltres}"></ComboBox>
-            <ComboBox x:Name="cbPack" Grid.Column="4" Grid.Row="1" Style="{StaticResource cbFiltres}"></ComboBox>
-            <ComboBox x:Name="cbHero" Grid.Column="5" Grid.Row="1" IsEnabled="False" Style="{StaticResource cbFiltres}"></ComboBox>
+            <TextBox x:Name="txtName" Grid.Column="0" Grid.Row="1" Margin="0,0,5,0" TextChanged="txtName_TextChanged"></TextBox>
+            <ComboBox x:Name="cbAspect" Grid.Column="1" Grid.Row="1" Style="{StaticResource cbFiltres}" SelectionChanged="cbSelectionChanged"></ComboBox>
+            <ComboBox x:Name="cbType" Grid.Column="2" Grid.Row="1" Style="{StaticResource cbFiltres}" SelectionChanged="cbSelectionChanged"></ComboBox>
+            <ComboBox x:Name="cbCost" Grid.Column="3" Grid.Row="1" Style="{StaticResource cbFiltres}" SelectionChanged="cbSelectionChanged"></ComboBox>
+            <ComboBox x:Name="cbPack" Grid.Column="4" Grid.Row="1" Style="{StaticResource cbFiltres}" SelectionChanged="cbSelectionChanged"></ComboBox>
+            <ComboBox x:Name="cbHero" Grid.Column="5" Grid.Row="1" IsEnabled="False" Style="{StaticResource cbFiltres}" SelectionChanged="cbSelectionChanged"></ComboBox>
         </Grid>
 
         <DataGrid x:Name="dtgCards" AutoGenerateColumns="False" ScrollViewer.VerticalScrollBarVisibility="Visible">

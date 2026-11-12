@@ -17,8 +17,12 @@ public static class AppServices
     public static ICardDao Cards { get; private set; } = null!;
     public static IDeckDao Decks { get; private set; } = null!;
     public static ILookupDao Lookups { get; private set; } = null!;
-    
-    public static IAspectDao Aspects { get; private set; }
+
+    public static IAspectDao Aspects { get; private set; } = null;
+
+    public static IHeroDao Heros { get; private set; } = null!;
+    public static ICardTypeDao CardTypes { get; private set; } = null!;
+    public static IPackDao Packs { get; private set; } = null!;
 
     public static void UseInMemoryData()
     {
@@ -27,5 +31,10 @@ public static class AppServices
         Decks = new InMemoryDeckDao(store);
         Lookups = new InMemoryLookupDao(store);
         Aspects = new InMemoryAspectDao(store);
+        Heros = new InMemoryHeroDao(store);
+        CardTypes = new InMemoryCardTypeDao(store);
+        Packs = new InMemoryPacksDao(store);
+
+        
     }
 }

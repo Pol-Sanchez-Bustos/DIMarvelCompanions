@@ -16,5 +16,5 @@ public interface ICardDao
     /// Every player card (requirements C.0), with <see cref="Card.Type"/>, <see cref="Card.Aspect"/>,
     /// <see cref="Card.Pack"/> and <see cref="Card.Hero"/> loaded, ordered by code.
     /// </summary>
-    IReadOnlyList<Card> GetAll();
+    List<Card> GetAll();
 }

@@ -13,7 +13,7 @@ public class InMemoryCardDao : ICardDao
 
     public InMemoryCardDao(InMemoryDataStore store) => _store = store;
 
-    public IReadOnlyList<Card> GetAll()
+    public List<Card> GetAll()
     {
         return _store.Cards.Where(IsPlayerCard).OrderBy(c => c.Code).ToList();
     }

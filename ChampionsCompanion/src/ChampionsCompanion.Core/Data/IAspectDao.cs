@@ -7,6 +7,6 @@ namespace ChampionsCompanion.Core.Data
 {
     public interface IAspectDao
     {
-        IReadOnlyList<Aspect> GetAll();
+        List<Aspect> GetAll();
     }
 }
