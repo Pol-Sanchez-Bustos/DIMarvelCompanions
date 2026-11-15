@@ -2,6 +2,7 @@ using ChampionsCompanion.Core.Model;
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace ChampionsCompanion.App.Pages;
 
@@ -12,7 +13,8 @@ public partial class CardsPage : Page
     {
         InitializeComponent();
     }
-
+    List<Card> cards;
+    List<Card> cards_filter;
     private void OnLoaded(object sender, RoutedEventArgs e)
     {
         // Pages never create DAOs: they use the ones in AppServices.
@@ -20,12 +22,12 @@ public partial class CardsPage : Page
         StatusText.Text = $"{cards.Count} player cards loaded. First one: {cards[0]} ({cards[0].Aspect.Name} {cards[0].Type.Name}).";
 
 
+        cards = AppServices.Cards.GetAll();
+        dtgCards.ItemsSource = cards;
+        lsvCards.ItemsSource = cards;
 
-        dtgCards.ItemsSource = AppServices.Cards.GetAll();
-        lsvCards.ItemsSource = AppServices.Cards.GetAll();
 
 
-        
 
         List<Aspect> aspects = AppServices.Aspects.GetAll();
 
@@ -121,9 +123,23 @@ public partial class CardsPage : Page
         
     }
 
+    private void filtrarCartes()
+    {
+        cards_filter = AppServices.Cards.GetAllFiltrats(txtName.Text,
+                (cbAspect.SelectedItem as Aspect).Id,
+                (cbType.SelectedItem as CardType).Id,
+                (cbHero.SelectedItem as Hero).Id,
+                (cbPack.SelectedItem as Pack).Id,
+                (cbCost.SelectedItem as string));
+
+        dtgCards.ItemsSource = cards_filter;
+        lsvCards.ItemsSource = cards_filter;
+        
+    }
+
     private void cbSelectionChanged(object sender, SelectionChangedEventArgs e)
     {
-        if (cbAspect.IsLoaded && cbAspect.HasItems)
+        if (cbAspect.IsLoaded && cbAspect.HasItems && cbAspect.SelectedItem != null)
         {
             if((cbAspect.SelectedItem as Aspect).Id == -1 || (cbAspect.SelectedItem as Aspect).Id == 1)
             {
@@ -134,6 +150,15 @@ public partial class CardsPage : Page
                 cbHero.IsEnabled=false;
             }
         }
+
+        if (cbAspect.IsLoaded && cbAspect.HasItems && cbAspect.SelectedItem != null &&
+            cbType.IsLoaded && cbType.HasItems && cbType.SelectedItem != null &&
+            cbHero.IsLoaded && cbHero.HasItems && cbHero.SelectedItem != null &&
+            cbPack.IsLoaded && cbPack.HasItems && cbPack.SelectedItem != null &&
+            cbCost.IsLoaded && cbCost.HasItems && cbCost.SelectedItem != null )
+        {
+            filtrarCartes();
+        }
     }
 
     
@@ -141,16 +166,22 @@ public partial class CardsPage : Page
 
     private void btNewCard_Click(object sender, RoutedEventArgs e)
     {
-        int codi = -1;
+
+        Card carta = null;
         if(dtgCards.IsLoaded == true && dtgCards.HasItems)
         {
-            if(dtgCards.SelectedItem != null)codi = (dtgCards.SelectedItem as Card).Id;
+            if (dtgCards.SelectedItem != null) carta = dtgCards.SelectedItem as Card;
         }
-        NavigationService.Navigate(new NewCard(codi));
+        
+        NavigationService.Navigate(new NewCard(carta));
     }
 
-    private void txtName_TextChanged(object sender, TextChangedEventArgs e)
-    {
+    
 
+    private void txtName_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+    {
+        if(e.Key == Key.Enter) {
+            filtrarCartes();
+        }
     }
 }

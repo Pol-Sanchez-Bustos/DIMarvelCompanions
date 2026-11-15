@@ -54,7 +54,7 @@
             <Label Grid.Column="4" Grid.Row="0">Pack</Label>
             <Label Grid.Column="5" Grid.Row="0">Hero</Label>
 
-            <TextBox x:Name="txtName" Grid.Column="0" Grid.Row="1" Margin="0,0,5,0" TextChanged="txtName_TextChanged"></TextBox>
+            <TextBox x:Name="txtName" Grid.Column="0" Grid.Row="1" Margin="0,0,5,0" KeyDown="txtName_KeyDown"></TextBox>
             <ComboBox x:Name="cbAspect" Grid.Column="1" Grid.Row="1" Style="{StaticResource cbFiltres}" SelectionChanged="cbSelectionChanged"></ComboBox>
             <ComboBox x:Name="cbType" Grid.Column="2" Grid.Row="1" Style="{StaticResource cbFiltres}" SelectionChanged="cbSelectionChanged"></ComboBox>
             <ComboBox x:Name="cbCost" Grid.Column="3" Grid.Row="1" Style="{StaticResource cbFiltres}" SelectionChanged="cbSelectionChanged"></ComboBox>
@@ -132,16 +132,16 @@
                 </DataGridTemplateColumn>
                 
                 
-                <DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Cost">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding Cost, TargetNullValue='---'}"></TextBlock>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                
-                <DataGridTextColumn Header="Aspect" Binding="{Binding Aspect}"></DataGridTextColumn>
+
                 <DataGridTextColumn Header="Traits" Binding="{Binding Traits}"></DataGridTextColumn>
+                
                 <DataGridTextColumn Header="Hero" Binding="{Binding Hero}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Pack" Binding="{Binding Pack}"></DataGridTextColumn>
                 

@@ -17,4 +17,5 @@ public interface ICardDao
     /// <see cref="Card.Pack"/> and <see cref="Card.Hero"/> loaded, ordered by code.
     /// </summary>
     List<Card> GetAll();
+    public List<Card> GetAllFiltrats(String nom = "", int aspect_id = -1, int type_id = -1, int hero_id = -1, int pack_id = -1, String cost = "---");
 }

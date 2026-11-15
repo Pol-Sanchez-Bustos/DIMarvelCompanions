@@ -5,11 +5,352 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ChampionsCompanion.App.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="NewCard">
+      d:DesignHeight="1774.809" d:DesignWidth="1150.382"
+      Title="NewCard"
+      Loaded="Page_Loaded">
 
-    <Grid>
-        
-        
+    <Page.Resources>
+        <Style x:Key="lbSubtitle" TargetType="Label" BasedOn="{StaticResource {x:Type Label}}">
+            <Setter Property="FontSize" Value="16"></Setter>
+            <Setter Property="FontWeight" Value="Bold"></Setter>
+            <Setter Property="Margin" Value="0,0,0,10"></Setter>
+        </Style>
+
+        <Style x:Key="lbWrap" TargetType="Label" BasedOn="{StaticResource {x:Type Label}}">
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Setter Property="ContentTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}"
+                           TextWrapping="Wrap"/>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="btCards" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+            <Setter Property="Margin" Value="0,0,10,0"></Setter>
+        </Style>
+
+    </Page.Resources>
+
+    <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="8*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal">
+            
+            <Button x:Name="btReturn" Click="btReturn_Click">Return</Button>
+            <Label Grid.Column="0" FontSize="28" FontWeight="SemiBold" Foreground="White">Edit Card</Label>
+            <Label x:Name="lbTitle" VerticalAlignment="Center">New Card</Label>
+
+
+        </StackPanel>
+
+        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left">
+            <Button Style="{StaticResource btCards}" x:Name="btDelete" Click="btDelete_Click">Delete</Button>
+            <Button Style="{StaticResource btCards}" x:Name="btCancel" Click="btCancel_Click">Cancel</Button>
+            <Button Style="{StaticResource btCards}" x:Name="btSave" Click="btSave_Click">Save</Button>
+        </StackPanel>
+
+
+
+        <Border VerticalAlignment="Top" Background="{StaticResource PanelBrush}" CornerRadius="15" Padding="20" Grid.Column="1" Grid.Row="2" >
+            <StackPanel Orientation="Vertical">
+                <Label>PREVIEW</Label>
+                <Image x:Name="imgPrev" Stretch="Fill" MaxHeight="350" MaxWidth="275" Margin="40,10,40,10"></Image>
+
+                <StackPanel Orientation="Horizontal">
+                    <Label x:Name="lbPrevTitle" FontSize="20" FontWeight="SemiBold" Foreground="White">●</Label>
+                    <Label x:Name="lbPrevSubTitle"></Label>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Label x:Name="lbPrevType"></Label>
+                    <Label x:Name="lbPrevAspect"></Label>
+                    <Label x:Name="lbPrevCost"></Label>
+                    <Label x:Name="lbPrevIcon"></Label>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+
+                    <Border  Background="{StaticResource PanelBorderBrush}" CornerRadius="15" Padding="20,10,20,10" Margin="0,5,5,5">
+                        <StackPanel Orientation="Vertical">
+                            <Label Margin="0,0,0,5">ATK</Label>
+                            <Label x:Name="lbPrevAtk"></Label>
+                        </StackPanel>
+                    </Border>
+                    <Border  Background="{StaticResource PanelBorderBrush}" CornerRadius="15" Padding="20,10,20,10" Margin="0,5,5,5">
+                        <StackPanel Orientation="Vertical">
+                            <Label Margin="0,0,0,5">THW</Label>
+                            <Label x:Name="lbPrevTHW"></Label>
+                        </StackPanel>
+                    </Border>
+                    <Border  Background="{StaticResource PanelBorderBrush}" CornerRadius="15" Padding="20,10,20,10" Margin="0,5,5,5">
+                        <StackPanel Orientation="Vertical">
+                            <Label Margin="0,0,0,5">HP</Label>
+                            <Label x:Name="lbPrevHP"></Label>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+
+                <Label x:Name="lbPrevTraits" Foreground="IndianRed" Margin="0,10,0,0"></Label>
+
+                <Label x:Name="lbPrevText" Margin="0,10,0,0" Style="{StaticResource lbWrap}"></Label>
+
+                <Label x:Name="lbPrevFlavor" Foreground="{StaticResource DimTextBrush}" FontStyle="Italic" Style="{StaticResource lbWrap}" Margin="0,10,0,0"></Label>
+
+                <Label x:Name="lbErrorToFix"></Label>
+
+
+            </StackPanel>
+        </Border>
+
+        <Grid Margin="0,40,0,0" Grid.RowSpan="4" Grid.Column="0" Grid.Row="2">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+
+            </Grid.RowDefinitions>
+
+            <Border Grid.Row="0" Background="{StaticResource PanelBrush}" CornerRadius="15" Padding="20" Margin="0,10,10,0" Grid.ColumnSpan="2">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Label Style="{StaticResource lbSubtitle}">Identity</Label>
+
+                    <Label Grid.Row="1">Name *</Label>
+                    <Label Grid.Row="1" Grid.Column="2">Subtitle</Label>
+                    <TextBox x:Name="txtTitle" Grid.Row="2" Grid.ColumnSpan="2" Margin="0,0,10,10"></TextBox>
+                    <TextBox Grid.Row="2" Grid.Column="2" x:Name="txtSubtitle" Margin="0,0,0,10"></TextBox>
+
+                    <Label Grid.Row="3">Code</Label>
+                    <Label Grid.Row="3" Grid.Column="1">Pack*</Label>
+                    <TextBox x:Name="txtCode" Grid.Row="4" Margin="0,0,10,10" IsEnabled="False"></TextBox>
+                    <TextBox Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" x:Name="txtPack" Margin="0,0,0,10"></TextBox>
+
+                    <Label Grid.Row="5">Read-only after creation</Label>
+
+                </Grid>
+            </Border>
+
+            <Border Grid.Column="0" Grid.Row="1" Background="{StaticResource PanelBrush}" CornerRadius="15" Padding="20" Margin="0,10,10,0" Grid.ColumnSpan="2">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Label Style="{StaticResource lbSubtitle}">Classification</Label>
+
+                    <Label Grid.Row="1">Type *</Label>
+                    <Label Grid.Row="1" Grid.Column="1">Aspect *</Label>
+                    <Label Grid.Row="1" Grid.Column="2">Hero</Label>
+
+                    <TextBox x:Name="txtType" Grid.Row="2" Margin="0,0,10,10"></TextBox>
+                    <TextBox Grid.Row="2" Grid.Column="1" x:Name="txtAspect" Margin="0,0,10,10"></TextBox>
+                    <TextBox Grid.Row="2" Grid.Column="2"  x:Name="txtHero" Margin="0,0,0,10"></TextBox>
+
+
+                </Grid>
+            </Border>
+
+            <Border Grid.Column="0" Grid.Row="2" Background="{StaticResource PanelBrush}" CornerRadius="15" Padding="20" Margin="0,10,10,0" Grid.ColumnSpan="2">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Label Style="{StaticResource lbSubtitle}">Cost and resources</Label>
+
+                    <Label Grid.Row="1">Cost *</Label>
+                    <Label Grid.Row="1" Grid.Column="1">Energy</Label>
+                    <Label Grid.Row="1" Grid.Column="2">Physical</Label>
+                    <Label Grid.Row="1" Grid.Column="3">Mental</Label>
+                    <Label Grid.Row="1" Grid.Column="4">Wild</Label>
+
+
+                    <TextBox x:Name="txtCost" Grid.Row="2" Margin="0,0,10,10"></TextBox>
+                    <TextBox Grid.Row="2" Grid.Column="1" x:Name="txtEnergy" Margin="0,0,10,10"></TextBox>
+                    <TextBox Grid.Row="2" Grid.Column="2"  x:Name="txtPhysical" Margin="0,0,10,10"></TextBox>
+                    <TextBox Grid.Row="2" Grid.Column="3" x:Name="txtMental" Margin="0,0,10,10"></TextBox>
+                    <TextBox Grid.Row="2" Grid.Column="4"  x:Name="txtWild" Margin="0,0,0,10"></TextBox>
+
+                    <Label Grid.Row="3" Grid.Column="0">0–9, X, or none (resources only)</Label>
+
+
+                </Grid>
+            </Border>
+
+            <Border Grid.Column="0" Grid.Row="3" Background="{StaticResource PanelBrush}" CornerRadius="15" Padding="20" Margin="0,10,10,0" Grid.ColumnSpan="2" x:Name="brAllyStats">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Label Style="{StaticResource lbSubtitle}">Ally stats</Label>
+                    <Label Grid.Column="4" Grid.Row="0" HorizontalContentAlignment="Right">Shown because Type = Ally</Label>
+
+
+                    <Label Grid.Row="1">Attack (ATK) *</Label>
+                    <Label Grid.Row="1" Grid.Column="1">ATK damage</Label>
+                    <Label Grid.Row="1" Grid.Column="2">Thwart (THW) *</Label>
+                    <Label Grid.Row="1" Grid.Column="3">THW damage</Label>
+                    <Label Grid.Row="1" Grid.Column="4">Health (HP) *</Label>
+
+
+                    <TextBox x:Name="txtAtkCost" Grid.Row="2" Margin="0,0,10,10"></TextBox>
+                    <TextBox Grid.Row="2" Grid.Column="1" x:Name="txtArkDmg" Margin="0,0,10,10"></TextBox>
+                    <TextBox Grid.Row="2" Grid.Column="2"  x:Name="txtThwCost" Margin="0,0,10,10"></TextBox>
+                    <TextBox Grid.Row="2" Grid.Column="3" x:Name="txtThwDmg" Margin="0,0,10,10"></TextBox>
+                    <TextBox Grid.Row="2" Grid.Column="4"  x:Name="txtHp" Margin="0,0,0,10"></TextBox>
+
+                    <Label Grid.Row="3" Grid.Column="0">0–9, X, or none (resources only)</Label>
+
+
+                </Grid>
+            </Border>
+
+            <Border Grid.Column="0" Grid.Row="4" Background="{StaticResource PanelBrush}" CornerRadius="15" Padding="20" Margin="0,10,10,0" Grid.ColumnSpan="2">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Label Style="{StaticResource lbSubtitle}">Deck Building</Label>
+
+                    <Label Grid.Row="1">Unique</Label>
+                    <Label Grid.Row="1" Grid.Column="1">Deck limit *</Label>
+
+                    
+                    <RibbonButton Grid.Row="2" Grid.Column="0" x:Name="tgbtnUnique"> on</RibbonButton>
+                    <TextBox Grid.Row="2" Grid.Column="1" x:Name="txtDeckLimit" Margin="0,0,10,10" IsEnabled="False"></TextBox>
+
+
+                    <Label Grid.Row="3" Grid.Column="1">Deck limit * 1 Unique cards are limited to 1</Label>
+
+
+                </Grid>
+            </Border>
+
+            <Border Grid.Column="0" Grid.Row="5" Background="{StaticResource PanelBrush}" CornerRadius="15" Padding="20" Margin="0,10,10,0" Grid.ColumnSpan="2">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Label Grid.Row="0" Style="{StaticResource lbSubtitle}">Text</Label>
+
+                    <Label Grid.Row="1">Traits</Label>
+                    <TextBox Grid.Row="2" x:Name="txtTraits" Margin="0,0,0,10"></TextBox>
+
+                    <Label Grid.Row="4">Rules text</Label>
+                    <TextBox Grid.Row="5" x:Name="txtRules"></TextBox>
+                    <Label Grid.Row="6" Foreground="{StaticResource DimTextBrush}" Margin="0,0,0,10">Supports bold, italic and icons such as [energy], [mental], [physical], [wild]</Label>
+
+                    <Label Grid.Row="7">Flavour text</Label>
+                    <TextBox Grid.Row="8"  x:Name="TxtFlavour"></TextBox>
+
+                </Grid>
+            </Border>
+
+            <Border Grid.Column="0" Grid.Row="6" Background="{StaticResource PanelBrush}" CornerRadius="15" Padding="20" Margin="0,10,10,0" Grid.ColumnSpan="2">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Label Grid.Row="0" Style="{StaticResource lbSubtitle}">Image</Label>
+
+                    <Image x:Name="imgCard" Stretch="Fill" MaxHeight="150" MaxWidth="100" Grid.Row="1"></Image>
+
+                    <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal">
+                        <Button Margin="0,0,10,10">Choose image...</Button>
+                        <Button Margin="0,0,0,10">Remove</Button>
+                    </StackPanel>
+
+
+                    <Label Grid.Column="1" Grid.Row="2">PNG, JPG or WEBP from a local folder. The app copies it to Images/Cards/01058.png; without an image the card shows the placeholder.</Label>
+                    <Label x:Name="lbImagePath" Grid.Column="1" Grid.Row="3"></Label>
+
+
+                </Grid>
+            </Border>
+        </Grid>
+
     </Grid>
 </Page>
