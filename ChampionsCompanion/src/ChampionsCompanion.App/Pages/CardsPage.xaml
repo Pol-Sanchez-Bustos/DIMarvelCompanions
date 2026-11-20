@@ -4,6 +4,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     Title="Cards"
     Loaded="OnLoaded"
+   
+    
 >
     <Page.Resources>
         <Style x:Key="cbFiltres" TargetType="ComboBox" BasedOn="{StaticResource {x:Type ComboBox}}">
@@ -16,7 +18,20 @@
 
     </Page.Resources>
 
+    <Page.Background>
+        <VisualBrush Stretch="UniformToFill" >
+            <VisualBrush.Visual>
+                <Image Source="C:\Users\Aleix Masip\Documents\Repos\DI\Practica 1\ChampionsCompanion\src\ChampionsCompanion.App\Images\nebula_background.jpg">
+                    <Image.Effect>
+                        <BlurEffect></BlurEffect>
+                    </Image.Effect>
+                </Image>
+            </VisualBrush.Visual>
+        </VisualBrush>
+    </Page.Background>
+    
     <StackPanel Margin="32,16">
+        
         <TextBlock x:Name="StatusText" Margin="0,12,0,0" Foreground="{StaticResource SubtleTextBrush}"  />
 
         <Grid>
