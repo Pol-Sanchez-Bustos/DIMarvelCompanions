@@ -635,6 +635,7 @@ public static class SeedData
             Name = "Spidey Justice",
             HeroId = spiderMan.Id,
             AspectId = justice.Id,
+            ImagePath = "/Images/Cards/01001a.png",
             Slots = new List<DeckSlot>
             {
                 new DeckSlot { Id = 1, CardId = 3, Quantity = 1 }, // Black Cat
@@ -664,6 +665,59 @@ public static class SeedData
                 new DeckSlot { Id = 25, CardId = 59, Quantity = 1 }, // Helicarrier
             },
         });
+        Deck CrearDeck(int id, string nombre, int heroId, int aspectId,String imagePath,
+    params (int CardId, int Quantity)[] cartas)
+        {
+            return new Deck
+            {
+                Id = id,
+                Name = nombre,
+                HeroId = heroId,
+                AspectId = aspectId,
+                ImagePath = imagePath,
+                Slots = cartas.Select((c, i) => new DeckSlot
+                {
+                    Id = id * 100 + i + 1,
+                    CardId = c.CardId,
+                    Quantity = c.Quantity
+                }).ToList()
+            };
+        }
+
+        // ---- More sample decks ----
+
+        store.Decks.AddRange(
+        [
+            // Captain Marvel Justice (40 cards)
+            CrearDeck(2, "Captain Marvel Justice", captainMarvel.Id, justice.Id,"/Images/Cards/01010a.png",
+        (13, 1), (14, 3), (15, 3), (16, 2),
+        (17, 1), (18, 1), (19, 2), (20, 2),
+        (28, 1), (29, 1), (30, 3), (31, 3),
+        (32, 2), (33, 3), (34, 3),
+        (50, 1), (51, 1), (52, 2), (53, 1),
+        (54, 1), (55, 1), (56, 1), (57, 1)
+    ),
+
+    // Spider-Man Leadership (40 cards)
+    CrearDeck(3, "Spidey Leadership", spiderMan.Id, leadership.Id,"/Images/Cards/01001a.png",
+        (3, 1), (4, 2), (5, 2), (6, 3),
+        (7, 1), (8, 2), (9, 2), (10, 2),
+        (35, 1), (36, 1), (37, 1), (38, 3),
+        (39, 3), (40, 3), (41, 2), (42, 3),
+        (50, 1), (51, 1), (52, 2), (53, 1),
+        (54, 1), (55, 1), (56, 1)
+    ),
+
+    // Captain Marvel Protection (40 cards)
+    CrearDeck(4, "Captain Marvel Protection", captainMarvel.Id, protection.Id,"/Images/Cards/01010a.png",
+        (13, 1), (14, 3), (15, 3), (16, 2),
+        (17, 1), (18, 1), (19, 2), (20, 2),
+        (43, 1), (44, 1), (45, 3), (46, 3),
+        (47, 2), (48, 3), (49, 3),
+        (50, 1), (51, 1), (52, 2), (53, 1),
+        (54, 1), (55, 1), (56, 1), (57, 1)
+    )
+        ]);
 
         var now = DateTime.Now;
         foreach (var card in store.Cards)

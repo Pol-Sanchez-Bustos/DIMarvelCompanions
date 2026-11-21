@@ -7,4 +7,9 @@ namespace ChampionsCompanion.Core.Data;
 public interface IDeckDao
 {
     public List<Deck> getAll();
+
+    public List<Deck> GetAllFiltrats(String nom = "", int hero_id = -1, int aspect_id = -1, int compl = -1);
+
+    public void Add(Deck deck);
+    public void Update(Deck deck);
 }

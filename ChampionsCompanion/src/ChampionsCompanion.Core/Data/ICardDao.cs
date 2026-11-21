@@ -18,4 +18,6 @@ public interface ICardDao
     /// </summary>
     List<Card> GetAll();
     public List<Card> GetAllFiltrats(String nom = "", int aspect_id = -1, int type_id = -1, int hero_id = -1, int pack_id = -1, String cost = "---");
+    void Add(Card carta);
+    void Update(Card carta);
 }

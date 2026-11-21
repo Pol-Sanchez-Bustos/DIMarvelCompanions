@@ -4,10 +4,186 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     Title="Decks"
     Loaded="OnLoaded">
+    <Page.Resources>
+        <Style x:Key="cbFiltres" TargetType="ComboBox" BasedOn="{StaticResource {x:Type ComboBox}}">
+            <Setter Property="Margin" Value="0,0,5,0"></Setter>
+        </Style>
+
+        <Style x:Key="btCards" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+            <Setter Property="Margin" Value="0,0,5,0"></Setter>
+        </Style>
+
+    </Page.Resources>
+
+    <Page.Background>
+        <VisualBrush Stretch="UniformToFill" >
+            <VisualBrush.Visual>
+                <Image Source="C:\Users\Aleix Masip\Documents\Repos\DI\Practica 1\ChampionsCompanion\src\ChampionsCompanion.App\Images\nebula_background.jpg">
+                    <Image.Effect>
+                        <BlurEffect></BlurEffect>
+                    </Image.Effect>
+                </Image>
+            </VisualBrush.Visual>
+        </VisualBrush>
+    </Page.Background>
 
     <StackPanel Margin="32,16">
-        <TextBlock Text="Decks" FontSize="28" FontWeight="SemiBold" />
-        <TextBlock x:Name="StatusText" Margin="0,12,0,0" Foreground="{StaticResource SubtleTextBrush}" />
-        <!-- TODO D.1: deck list with status, New, Edit and Delete. -->
+
+        <TextBlock x:Name="StatusText" Margin="0,12,0,0" Foreground="{StaticResource SubtleTextBrush}"  />
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Text="Decks" FontSize="28" FontWeight="SemiBold" Foreground="White"/>
+            <Button Grid.Column="1" Style="{StaticResource btCards}" HorizontalAlignment="Right" Padding="10,10,20,10" Background="{StaticResource AccentBrush}" Foreground="Black" x:Name="btNewDeck" Click="btNewDeck_Click">+ New Deck</Button>
+        </Grid>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Column="0" Grid.Row="0">Deck name</Label>
+            <Label Grid.Column="1" Grid.Row="0">Hero</Label>
+            <Label Grid.Column="2" Grid.Row="0">Aspect</Label>
+            <Label Grid.Column="3" Grid.Row="0">Status</Label>
+
+            <TextBox x:Name="txtName" Grid.Column="0" Grid.Row="1" Margin="0,0,5,0" KeyDown="txtName_KeyDown"></TextBox>
+            <ComboBox x:Name="cbHero" Grid.Column="1" Grid.Row="1" Style="{StaticResource cbFiltres}" SelectionChanged="cbSelectionChanged"></ComboBox>
+            <ComboBox x:Name="cbAspect" Grid.Column="2" Grid.Row="1" Style="{StaticResource cbFiltres}" SelectionChanged="cbSelectionChanged"></ComboBox>
+            <ComboBox x:Name="cbStatus" Grid.Column="3" Grid.Row="1" Style="{StaticResource cbFiltres}" SelectionChanged="cbSelectionChanged"></ComboBox>
+
+        </Grid>
+
+        <Label x:Name="lbDeckCount"></Label>
+
+        <ListView x:Name="lsvDecks" ScrollViewer.VerticalScrollBarVisibility="Visible" Background="Transparent" BorderBrush="Transparent">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
+                    <Setter Property="Padding" Value="0"></Setter>
+                    <Setter Property="Margin" Value="0,0,0,12"></Setter>
+                    <Setter Property="Background" Value="Transparent"></Setter>
+                    <Setter Property="BorderThickness" Value="0"></Setter>
+                </Style>
+            </ListView.ItemContainerStyle>
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border Background="#111111" BorderBrush="#383838" BorderThickness="1" CornerRadius="9" Padding="15">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="auto"></ColumnDefinition>
+                                <ColumnDefinition Width="auto"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+                            <Image Grid.Column="0" Source="{Binding ImagePath}" Width="50" Height="50" Stretch="UniformToFill" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
+
+                            <StackPanel Grid.Column="1" Margin="20,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left">
+                                <Label Content="{Binding Name}"></Label>
+                                <StackPanel Orientation="Horizontal" Margin="0,0,0,12">
+                                    <Label Content="{Binding Title}" FontSize="20" FontWeight="Bold" Foreground="{StaticResource DimTextBrush}"></Label>
+                                    <Label Foreground="{StaticResource DimTextBrush}">-</Label>
+                                    <Label Content="{Binding Subtitle}" Foreground="{StaticResource DimTextBrush}" Margin="10,0,0,0"></Label>
+                                </StackPanel>
+                            </StackPanel>
+
+                            <Border Grid.Column="2" Padding="10,4" CornerRadius="15" Margin="0,0,10,0" VerticalAlignment="Center" HorizontalAlignment="Left">
+                                <Border.Style>
+                                    <Style TargetType="Border">
+                                        <Setter Property="Background" Value="Gray"></Setter>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding AspectId}" Value="1">
+                                                <Setter Property="Background" Value="{StaticResource Aspect.hero}"></Setter>
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding AspectId}" Value="4">
+                                                <Setter Property="Background" Value="{StaticResource Aspect.aggression}"></Setter>
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding AspectId}" Value="3">
+                                                <Setter Property="Background" Value="{StaticResource Aspect.justice}"></Setter>
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding AspectId}" Value="6">
+                                                <Setter Property="Background" Value="{StaticResource Aspect.leadership}"></Setter>
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding AspectId}" Value="5">
+                                                <Setter Property="Background" Value="{StaticResource Aspect.protection}"></Setter>
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding AspectId}" Value="2">
+                                                <Setter Property="Background" Value="{StaticResource Aspect.basic}"></Setter>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Border.Style>
+                                <Label Content="{Binding Aspect}" Foreground="Black" FontWeight="Medium" Padding="0"></Label>
+                            </Border>
+
+                            <StackPanel Grid.Column="3" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
+                                <Label Content="{Binding CardCount}" FontWeight="Bold"></Label>
+                                <Label>/</Label>
+                                <Label Content="{Binding MinCards}"></Label>
+                                <Label>-</Label>
+                                <Label Content="{Binding MaxCars}"></Label>
+                            </StackPanel>
+
+                            <Border Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Left" CornerRadius="15">
+                                <Border.Style>
+                                    <Style TargetType="Border">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding IsCardCountValid}" Value="False">
+                                                <Setter Property="Background" Value="{StaticResource StatusBadBackground}"/>
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding IsCardCountValid}" Value="True">
+                                                <Setter Property="Background" Value="{StaticResource StatusOkBackground}"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Border.Style>
+
+                                <Label VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Bold">
+                                    <Label.Style>
+                                        <Style TargetType="Label">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding IsCardCountValid}" Value="True">
+                                                    <Setter Property="Content" Value="Complete"/>
+                                                    <Setter Property="Foreground" Value="{StaticResource StatusOkForeground}"/>
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding IsCardCountValid}" Value="False">
+                                                    <Setter Property="Content" Value="Incomplete"/>
+                                                    <Setter Property="Foreground" Value="{StaticResource StatusBadForeground}"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Label.Style>
+                                </Label>
+                            </Border>
+
+                            <Label Grid.Column="5" Content="{Binding DateCreation}" Foreground="{StaticResource DimTextBrush}" VerticalAlignment="Center" HorizontalAlignment="Left"></Label>
+
+                            <Button Grid.Column="6" x:Name="btEdit" Click="btEdit_Click" VerticalAlignment="Center" HorizontalAlignment="Left" Background="Transparent" BorderBrush="Transparent">E</Button>
+                            <Button Grid.Column="7" x:Name="btDelete" Click="btDelete_Click" VerticalAlignment="Center" HorizontalAlignment="Left" Background="Transparent" BorderBrush="Transparent">D</Button>
+
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <!-- TODO C.1: filters, grid mode (DataGrid) and card mode (ListView + CardView custom control). -->
     </StackPanel>
 </Page>

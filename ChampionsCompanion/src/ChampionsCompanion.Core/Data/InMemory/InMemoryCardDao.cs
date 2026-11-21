@@ -80,6 +80,27 @@ public class InMemoryCardDao : ICardDao
         return filtrats;
     }
 
+    public void Add(Card carta)
+    {
+        carta.Id = _store.NextCardId();
+
+        _store.Cards.Add(carta);
+
+        _store.Link();
+    }
+
+    public void Update(Card carta)
+    {
+        Card carta_memoria = _store.Cards.FirstOrDefault(c => c.Id == carta.Id);
+
+        if (carta_memoria != null)
+        {
+            // Actualizar las propiedades
+            carta_memoria = carta;
+
+            _store.Link();
+        }
+    }
 
     // TODO: implement the other methods of ICardDao. After a change that adds or modifies
     // a card, call _store.Link() so its Aspect, Type, Pack and Hero references are set.

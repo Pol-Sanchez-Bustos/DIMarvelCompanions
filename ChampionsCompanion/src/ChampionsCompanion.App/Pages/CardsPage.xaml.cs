@@ -26,7 +26,7 @@ public partial class CardsPage : Page
         dtgCards.ItemsSource = cards;
         lsvCards.ItemsSource = cards;
 
-
+        lbCardCount.Content = cards.Count+" cards - filters kept when switching modes";
 
 
         List<Aspect> aspects = AppServices.Aspects.GetAll();
@@ -158,6 +158,7 @@ public partial class CardsPage : Page
             cbCost.IsLoaded && cbCost.HasItems && cbCost.SelectedItem != null )
         {
             filtrarCartes();
+            lbCardCount.Content = cards_filter.Count + " cards - filters kept when switching modes";
         }
     }
 

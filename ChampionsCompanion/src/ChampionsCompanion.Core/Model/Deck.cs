@@ -6,6 +6,8 @@ public class Deck
     public const int MinCards = 40;
     public const int MaxCards = 50;
 
+    public bool IsCardCountValid => CardCount < MinCards && CardCount > MaxCards;
+
     public int Id { get; set; }
     public string Name { get; set; } = "";
 

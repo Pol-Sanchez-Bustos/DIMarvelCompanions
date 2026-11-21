@@ -76,7 +76,7 @@
             <ComboBox x:Name="cbPack" Grid.Column="4" Grid.Row="1" Style="{StaticResource cbFiltres}" SelectionChanged="cbSelectionChanged"></ComboBox>
             <ComboBox x:Name="cbHero" Grid.Column="5" Grid.Row="1" IsEnabled="False" Style="{StaticResource cbFiltres}" SelectionChanged="cbSelectionChanged"></ComboBox>
         </Grid>
-
+        <Label x:Name="lbCardCount"></Label>
         <DataGrid x:Name="dtgCards" AutoGenerateColumns="False" ScrollViewer.VerticalScrollBarVisibility="Visible">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="#" Binding="{Binding Id}"></DataGridTextColumn>
@@ -185,100 +185,122 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        
 
-        <ListView x:Name="lsvCards" ScrollViewer.VerticalScrollBarVisibility="Visible" Visibility="Collapsed" >
+
+
+        <ListView x:Name="lsvCards" ScrollViewer.VerticalScrollBarVisibility="Visible" Visibility="Collapsed" Background="Transparent" BorderBrush="Transparent">
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
-                    <Setter Property="HorizontalContentAlignment" Value="Stretch">
-                    </Setter>
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
+                    <Setter Property="Padding" Value="0"></Setter>
+                    <Setter Property="Margin" Value="0,0,0,12"></Setter>
+                    <Setter Property="Background" Value="Transparent"></Setter>
+                    <Setter Property="BorderThickness" Value="0"></Setter>
                 </Style>
             </ListView.ItemContainerStyle>
-            
+
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-
-                        <Image Source="{Binding ImagePath}" Width="300" Height="400" Visibility="Visible"></Image>
-                        
-
-                        
+                    <Border Background="#111111" BorderBrush="#383838" BorderThickness="1" CornerRadius="9" Padding="18">
                         <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="auto"></RowDefinition>
-                                <RowDefinition Height="auto"></RowDefinition>
-                                <RowDefinition Height="auto"></RowDefinition>
-                                <RowDefinition Height="auto"></RowDefinition>
-                                <RowDefinition Height="auto"></RowDefinition>
-                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
 
-                            <StackPanel Grid.Row="0" Orientation="Horizontal">
-                                <Label>● </Label>
-                                <TextBlock Text="{Binding Title}" Margin="0,0,4,0" FontSize="20" FontWeight="Bold"></TextBlock>
-                                <TextBlock Text="{Binding Subtitle}" Foreground="DarkGray"></TextBlock>
-                            </StackPanel>
-                            
+                            <Image Grid.Column="0" Source="{Binding ImagePath}" Width="150" Height="210" Stretch="UniformToFill" VerticalAlignment="Top"></Image>
 
-                            <StackPanel Grid.Row="1" Orientation="Horizontal">
-                                
-                                <TextBlock Text="{Binding Type}"></TextBlock>
-                                <Label> </Label>
-                                <Border Padding="8,4"
-                                    CornerRadius="15"
-                                    HorizontalAlignment="Left">
+                            <StackPanel Grid.Column="1" Margin="20,0,0,0">
+                                <StackPanel Orientation="Horizontal" Margin="0,0,0,12">
+                                    <Label Content="●" Foreground="White" Margin="0,0,8,0"></Label>
+                                    <Label Content="{Binding Title}" FontSize="20" FontWeight="Bold" Foreground="White"></Label>
+                                    <Label Content="{Binding Subtitle}" Foreground="LightGray" Margin="10,0,0,0"></Label>
+                                </StackPanel>
 
-                                    <Border.Style>
-                                        <Style TargetType="Border">
-                                            <Setter Property="Background" Value="Gray"/>
+                                <StackPanel Margin="0,0,0,12" Orientation="Horizontal">
+                                    
 
+                                    <Label Content="{Binding Type}" Foreground="White" VerticalAlignment="Center" Margin="0,0,10,0"></Label>
+
+                                    <Border Padding="10,4" CornerRadius="15" Margin="0,0,10,0">
+                                        <Border.Style>
+                                            <Style TargetType="Border">
+                                                <Setter Property="Background" Value="Gray"></Setter>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding AspectId}" Value="1">
+                                                        <Setter Property="Background" Value="{StaticResource Aspect.hero}"></Setter>
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding AspectId}" Value="4">
+                                                        <Setter Property="Background" Value="{StaticResource Aspect.aggression}"></Setter>
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding AspectId}" Value="3">
+                                                        <Setter Property="Background" Value="{StaticResource Aspect.justice}"></Setter>
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding AspectId}" Value="6">
+                                                        <Setter Property="Background" Value="{StaticResource Aspect.leadership}"></Setter>
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding AspectId}" Value="5">
+                                                        <Setter Property="Background" Value="{StaticResource Aspect.protection}"></Setter>
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding AspectId}" Value="2">
+                                                        <Setter Property="Background" Value="{StaticResource Aspect.basic}"></Setter>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <Label Content="{Binding Aspect}" Foreground="Black" FontWeight="Medium" Padding="0"></Label>
+                                    </Border>
+
+                                    <Label Foreground="White" Margin="0,0,10,0">Cost </Label>
+                                    <Label Content="{Binding Cost, TargetNullValue='---'}" Foreground="White" Margin="0,0,10,0"></Label>
+                                    <Label Foreground="White" Margin="0,0,10,0"> Resource</Label>
+                                    <Label Content="{Binding Pack}" Foreground="White" Margin="0,0,10,0"></Label>
+                                    <Label Content="{Binding PackId}" Foreground="White" Margin="0,0,10,0"></Label>
+                                    
+                                </StackPanel>
+
+                                <StackPanel Orientation="Horizontal">
+                                    <StackPanel.Style>
+                                        <Style TargetType="StackPanel">
+                                            <Setter Property="Visibility" Value="Collapsed"></Setter>
                                             <Style.Triggers>
-
-                                                <DataTrigger Binding="{Binding AspectId}" Value="1">
-                                                    <Setter Property="Background" Value="{StaticResource Aspect.hero}"/>
+                                                <DataTrigger Binding="{Binding Type.Name}" Value="Ally">
+                                                    <Setter Property="Visibility" Value="Visible"></Setter>
                                                 </DataTrigger>
-
-                                                <DataTrigger Binding="{Binding AspectId}" Value="4">
-                                                    <Setter Property="Background" Value="{StaticResource Aspect.aggression}"/>
-                                                </DataTrigger>
-
-                                                <DataTrigger Binding="{Binding AspectId}" Value="3">
-                                                    <Setter Property="Background" Value="{StaticResource Aspect.justice}"/>
-                                                </DataTrigger>
-
-                                                <DataTrigger Binding="{Binding AspectId}" Value="6">
-                                                    <Setter Property="Background" Value="{StaticResource Aspect.leadership}"/>
-                                                </DataTrigger>
-
-                                                <DataTrigger Binding="{Binding AspectId}" Value="5">
-                                                    <Setter Property="Background" Value="{StaticResource Aspect.protection}"/>
-                                                </DataTrigger>
-
-                                                <DataTrigger Binding="{Binding AspectId}" Value="2">
-                                                    <Setter Property="Background" Value="{StaticResource Aspect.basic}"/>
-                                                </DataTrigger>
-
                                             </Style.Triggers>
                                         </Style>
-                                    </Border.Style>
-
-                                    <TextBlock Text="{Binding Aspect}"
-                                       Foreground="Black"
-                                       FontWeight="Medium"/>
-                                </Border>
+                                    </StackPanel.Style>
+                                    
+                                    <Border  Background="{StaticResource PanelBorderBrush}" CornerRadius="15" Padding="20,10,20,10" Margin="0,5,5,5">
+                                        <StackPanel Orientation="Vertical">
+                                            <Label Margin="0,0,0,5">ATK</Label>
+                                            <Label x:Name="lbPrevAtk" Content="{Binding Attack}"></Label>
+                                        </StackPanel>
+                                    </Border>
+                                    <Border  Background="{StaticResource PanelBorderBrush}" CornerRadius="15" Padding="20,10,20,10" Margin="0,5,5,5">
+                                        <StackPanel Orientation="Vertical">
+                                            <Label Margin="0,0,0,5">THW</Label>
+                                            <Label x:Name="lbPrevTHW" Content="{Binding Thwart}"></Label>
+                                        </StackPanel>
+                                    </Border>
+                                    <Border  Background="{StaticResource PanelBorderBrush}" CornerRadius="15" Padding="20,10,20,10" Margin="0,5,5,5">
+                                        <StackPanel Orientation="Vertical">
+                                            <Label Margin="0,0,0,5">HP</Label>
+                                            <Label x:Name="lbPrevHP" Content="{Binding Health}"></Label>
+                                        </StackPanel>
+                                    </Border>
+                                </StackPanel>
                                 
-                                <Label> Cost </Label>
-                                <TextBlock Text="{Binding Cost}"></TextBlock>
-                                <Label> Resource </Label>
-
-                                <TextBlock Text="{Binding Pack}"></TextBlock>
-                                <TextBlock Text="{Binding Id}"></TextBlock>
+                                <Label Content="{Binding Traits}" Foreground="White" Padding="0" ></Label>
+                                <Label Content="{Binding Text}" Foreground="White" Padding="0" ></Label>
+                                <Label Content="{Binding Flavor}" Foreground="{StaticResource DimTextBrush}" Padding="0" ></Label>
                             </StackPanel>
-
                         </Grid>
-                    </StackPanel>
+                    </Border>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+
         <!-- TODO C.1: filters, grid mode (DataGrid) and card mode (ListView + CardView custom control). -->
     </StackPanel>
 </Page>

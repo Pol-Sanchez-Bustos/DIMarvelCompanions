@@ -108,7 +108,7 @@
 
                 <Label x:Name="lbPrevFlavor" Foreground="{StaticResource DimTextBrush}" FontStyle="Italic" Style="{StaticResource lbWrap}" Margin="0,10,0,0"></Label>
 
-                <Label x:Name="lbErrorToFix"></Label>
+                <Label x:Name="lbErrorToFix" Foreground="IndianRed"></Label>
 
 
             </StackPanel>
@@ -152,7 +152,7 @@
                     <Label Grid.Row="3">Code</Label>
                     <Label Grid.Row="3" Grid.Column="1">Pack*</Label>
                     <TextBox x:Name="txtCode" Grid.Row="4" Margin="0,0,10,10" IsEnabled="False"></TextBox>
-                    <TextBox Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" x:Name="txtPack" Margin="0,0,0,10"></TextBox>
+                    <ComboBox x:Name="cbPack" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Margin="0,0,0,10"></ComboBox>
 
                     <Label Grid.Row="5">Read-only after creation</Label>
 
@@ -178,9 +178,11 @@
                     <Label Grid.Row="1" Grid.Column="1">Aspect *</Label>
                     <Label Grid.Row="1" Grid.Column="2">Hero</Label>
 
-                    <TextBox x:Name="txtType" Grid.Row="2" Margin="0,0,10,10"></TextBox>
-                    <TextBox Grid.Row="2" Grid.Column="1" x:Name="txtAspect" Margin="0,0,10,10"></TextBox>
-                    <TextBox Grid.Row="2" Grid.Column="2"  x:Name="txtHero" Margin="0,0,0,10"></TextBox>
+                    <ComboBox x:Name="cbType" Grid.Row="2" Margin="0,0,10,10"></ComboBox>
+
+                    <ComboBox x:Name="cbAspect" Grid.Row="2" Grid.Column="1" Margin="0,0,10,10" SelectionChanged="cbAspect_SelectionChanged"></ComboBox>
+
+                    <ComboBox x:Name="cbHero" Grid.Row="2" Grid.Column="2" Margin="0,0,0,10" IsEnabled="False"></ComboBox>
 
 
                 </Grid>
@@ -211,7 +213,7 @@
                     <Label Grid.Row="1" Grid.Column="4">Wild</Label>
 
 
-                    <TextBox x:Name="txtCost" Grid.Row="2" Margin="0,0,10,10"></TextBox>
+                    <ComboBox x:Name="cbCost" Grid.Row="2" Margin="0,0,10,10"></ComboBox>
                     <TextBox Grid.Row="2" Grid.Column="1" x:Name="txtEnergy" Margin="0,0,10,10"></TextBox>
                     <TextBox Grid.Row="2" Grid.Column="2"  x:Name="txtPhysical" Margin="0,0,10,10"></TextBox>
                     <TextBox Grid.Row="2" Grid.Column="3" x:Name="txtMental" Margin="0,0,10,10"></TextBox>
@@ -280,8 +282,8 @@
                     <Label Grid.Row="1">Unique</Label>
                     <Label Grid.Row="1" Grid.Column="1">Deck limit *</Label>
 
-                    
-                    <RibbonButton Grid.Row="2" Grid.Column="0" x:Name="tgbtnUnique"> on</RibbonButton>
+
+                    <ToggleButton Grid.Row="2" Grid.Column="0" x:Name="tgbtnUnique" Click="tgbtnUnique_Click"></ToggleButton>
                     <TextBox Grid.Row="2" Grid.Column="1" x:Name="txtDeckLimit" Margin="0,0,10,10" IsEnabled="False"></TextBox>
 
 
